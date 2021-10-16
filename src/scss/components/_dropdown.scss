@@ -32,6 +32,7 @@
 	&__list {
 		position: relative;
 		display: none;
+
 		&.active {
 			position: absolute;
 			display: block;

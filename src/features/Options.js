@@ -8,9 +8,9 @@ export const optionSlice = createSlice({
 	name: "option",
 	initialState: initialStateValue,
 	reducers: {
-		filter: (state, { payload }) => {
+		filter: (state, action) => {
 			// spreading state is no longer necessary
-			state.option = payload;
+			state.option = action.payload;
 		},
 	},
 });

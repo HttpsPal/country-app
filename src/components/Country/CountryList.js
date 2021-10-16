@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import {
 	useGetCountryQuery,
@@ -11,16 +11,31 @@ import { Link } from "react-router-dom";
 const CountryList = () => {
 	const { option } = useSelector((state) => state.option);
 	const { searched } = useSelector((state) => state.search);
-
 	const allResult = useGetAllQuery();
 	const countriesResult = useGetCountryQuery(searched);
 	const regionResult = useGetRegionQuery(option);
 
-	console.log();
+	const [countryList, setCountryList] = useState(allResult);
+
+	useEffect(() => {
+		setCountryList(allResult);
+	}, [allResult]);
+
+	useEffect(() => {
+		if (option) {
+			setCountryList(regionResult);
+		}
+	}, [option, regionResult]);
+
+	useEffect(() => {
+		if (searched) {
+			setCountryList(countriesResult);
+		}
+	}, [searched, countriesResult]);
 
 	return (
 		<>
-			{allResult.data?.map((country) => (
+			{countryList.data?.map((country) => (
 				<Link
 					onClick={() => {}}
 					key={country.name.official}

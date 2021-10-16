@@ -14,8 +14,6 @@ export const searchSlice = createSlice({
 	},
 });
 
-// Actions being exported to update the state when dispatched
 export const { search } = searchSlice.actions;
 
-// Reducer exported to store
 export default searchSlice.reducer;

@@ -1,13 +1,25 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { ImSearch } from "react-icons/im";
 import { search } from "../../features/Searched";
 
 const SearchBar = () => {
 	const { darkMode } = useSelector((state) => state.darkMode);
-	const { searched } = useSelector((state) => state.search);
+	const [searching, setSearching] = useState("");
 
 	const dispatch = useDispatch();
+
+	useEffect(() => {
+		const throttleId = setTimeout(() => {
+			if (searching) {
+				dispatch(search(searching));
+			}
+		}, 700);
+
+		return () => {
+			clearTimeout(throttleId);
+		};
+	}, [searching, dispatch]);
 
 	return (
 		<>
@@ -31,9 +43,9 @@ const SearchBar = () => {
 				type="search"
 				id="search"
 				name="search"
-				value={searched}
+				value={searching}
 				onChange={(e) => {
-					dispatch(search(e.target.value));
+					setSearching(e.target.value);
 				}}
 				placeholder="Search for a country..."
 				autoComplete="off"
