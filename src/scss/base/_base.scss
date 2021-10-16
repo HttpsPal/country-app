@@ -1,0 +1,51 @@
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+	font-family: inherit;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	box-sizing: border-box;
+	position: relative;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+li {
+	list-style: none;
+}
+
+input:focus,
+button:focus,
+select:focus,
+a:focus,
+textarea:focus {
+	outline: none;
+}
+
+button,
+select,
+input {
+	border: none;
+	cursor: pointer;
+}
+
+select {
+	appearance: none;
+}
+
+textarea {
+	resize: none;
+}

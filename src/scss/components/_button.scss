@@ -1,0 +1,11 @@
+.btn-search {
+	padding: 1rem 1rem;
+	position: absolute;
+	background-color: $white;
+	color: $dark-gray;
+
+	&.nightmode {
+		background-color: $dark-blue;
+		color: $white;
+	}
+}

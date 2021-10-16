@@ -1,0 +1,26 @@
+.form {
+	display: flex;
+	justify-content: space-between;
+	@include respond(phone) {
+		flex-direction: column;
+	}
+
+	&__group {
+		position: relative;
+
+		&--1 {
+			width: 100%;
+			max-width: 50rem;
+
+			@include respond(tab-port) {
+				max-width: 40rem;
+			}
+		}
+
+		@include respond(phone) {
+			&:not(:last-child) {
+				margin-bottom: 2rem;
+			}
+		}
+	}
+}

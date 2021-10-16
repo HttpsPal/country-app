@@ -1,0 +1,43 @@
+.nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	box-shadow: 0 0.2rem 1.6rem rgba(0, 0, 0, 0.1);
+	padding: 2rem 0;
+	transition: all 0.2s ease-in;
+	-webkit-transition: all 0.2s ease-in;
+	-moz-transition: all 0.2s ease-in;
+	-ms-transition: all 0.2s ease-in;
+	-o-transition: all 0.2s ease-in;
+	&.nightmode {
+		background-color: $dark-blue;
+		color: $white;
+	}
+
+	&--logo {
+		font-weight: 800;
+		font-size: 1.8rem;
+		margin-left: 8rem;
+		@include respond(phone) {
+			margin-left: 2rem;
+			font-size: $default-font;
+		}
+	}
+
+	&--toggle {
+		display: flex;
+		margin-right: 8rem;
+		justify-content: center;
+		align-items: center;
+		font-weight: 600;
+		cursor: pointer;
+		@include respond(phone) {
+			margin-right: 2rem;
+		}
+	}
+
+	&--icon {
+		display: flex;
+		margin-right: 1rem;
+	}
+}
