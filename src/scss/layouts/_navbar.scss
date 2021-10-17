@@ -13,14 +13,18 @@
 		background-color: $dark-blue;
 		color: $white;
 	}
-
-	&--logo {
-		font-weight: 800;
-		font-size: 1.8rem;
+	&--container {
 		margin-left: 8rem;
 		@include respond(phone) {
 			margin-left: 2rem;
-			font-size: $default-font;
+		}
+
+		&--logo {
+			font-weight: 800;
+			font-size: 1.8rem;
+			@include respond(phone) {
+				font-size: $default-font;
+			}
 		}
 	}
 

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { IoMoonSharp, IoMoonOutline } from "react-icons/io5";
 import { toggle } from "../features/DarkMode";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
 	const [theme, setTheme] = useState(true);
@@ -16,7 +17,11 @@ const Navbar = () => {
 
 	return (
 		<nav className={darkMode ? "nav nightmode" : "nav"}>
-			<h1 className="nav--logo">Where In The World?</h1>
+			<div className="nav--container">
+				<Link to="/">
+					<h1 className="nav--container--logo">Where In The World?</h1>
+				</Link>
+			</div>
 			<h2
 				onClick={updateAppTheme}
 				className={darkMode ? "nav--toggle active" : "nav--toggle"}

@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import {
 	useGetCountryQuery,
 	useGetRegionQuery,
 	useGetAllQuery,
 } from "../../services/CountryAPI";
+import { select } from "../../features/Country";
 import CountryCard from "./CountryCard";
-import { Link } from "react-router-dom";
 
 const CountryList = () => {
 	const { option } = useSelector((state) => state.option);
@@ -16,6 +17,8 @@ const CountryList = () => {
 	const regionResult = useGetRegionQuery(option);
 
 	const [countryList, setCountryList] = useState(allResult);
+
+	const dispatch = useDispatch();
 
 	useEffect(() => {
 		setCountryList(allResult);
@@ -37,7 +40,7 @@ const CountryList = () => {
 		<>
 			{countryList.data?.map((country) => (
 				<Link
-					onClick={() => {}}
+					onClick={() => dispatch(select(country))}
 					key={country.name.official}
 					to={`/details/${country.name.official}`}
 				>
