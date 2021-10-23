@@ -1,0 +1,30 @@
+.details-container {
+	background-color: $very-light-gray;
+	min-height: 100rem;
+	width: 100%;
+	padding: 4rem 8rem;
+	transition: all 0.2s ease-in;
+	-webkit-transition: all 0.2s ease-in;
+	-moz-transition: all 0.2s ease-in;
+	-ms-transition: all 0.2s ease-in;
+	-o-transition: all 0.2s ease-in;
+	@include respond(phone) {
+		padding: 2rem 3rem;
+		min-height: 125rem;
+	}
+	@include respond(tab-land) {
+		min-height: 150rem;
+	}
+	@include respond(tab-port) {
+		min-height: 120rem;
+	}
+	@include respond(big-desktop) {
+		min-height: 160rem;
+		padding: 24rem 30rem;
+	}
+
+	&.nightmode {
+		background-color: $very-dark-blue;
+		color: $white;
+	}
+}

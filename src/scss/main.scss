@@ -5,11 +5,14 @@
 @import "base/base";
 @import "base/typography";
 
+@import "components/border";
 @import "components/button";
 @import "components/card";
 @import "components/dropdown";
+@import "components/flagbox";
 @import "components/searchbar";
 
+@import "layouts/details";
 @import "layouts/formbar";
 @import "layouts/grid";
 @import "layouts/navbar";

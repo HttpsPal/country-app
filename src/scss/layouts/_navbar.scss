@@ -9,10 +9,12 @@
 	-moz-transition: all 0.2s ease-in;
 	-ms-transition: all 0.2s ease-in;
 	-o-transition: all 0.2s ease-in;
+
 	&.nightmode {
 		background-color: $dark-blue;
 		color: $white;
 	}
+
 	&--container {
 		margin-left: 8rem;
 		@include respond(phone) {

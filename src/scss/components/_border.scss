@@ -1,26 +1,11 @@
-.btn-search {
-	padding: 1rem 1rem;
-	position: absolute;
-	background-color: $white;
-	color: $dark-gray;
-
-	&.nightmode {
-		background-color: $dark-blue;
-		color: $white;
-	}
-}
-
-.btn-return {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	align-items: center;
-	padding: 0.2rem 2.5rem;
-	position: absolute;
+.border {
+	margin-left: 1rem;
+	display: inline-block;
+	text-align: center;
+	padding: 0 2rem;
 	background-color: $white;
 	color: $black;
 	box-shadow: 0 0 0.5rem 0.3rem rgba(0, 0, 0, 0.144);
-	cursor: pointer;
 	border-radius: 0.5rem;
 	-webkit-border-radius: 0.5rem;
 	-moz-border-radius: 0.5rem;
@@ -32,25 +17,19 @@
 	-ms-transition: all 0.2s ease-in;
 	-o-transition: all 0.2s ease-in;
 	@include respond(phone) {
-		margin-top: 2rem;
+		margin-top: 1rem;
+		&:first-child {
+			margin-left: 0;
+		}
 	}
-
-	&--icon {
-		font-size: 1.8rem;
-		font-weight: 700;
-		margin-top: 0.2rem;
-		color: inherit;
-	}
-
-	&--text {
-		font-size: 1.4rem;
-		font-weight: 200;
-		margin-left: 1rem;
-	}
-
 	&.nightmode {
 		box-shadow: 0 0 0.5rem 0.3rem rgba(0, 0, 0, 0.212);
 		background-color: $dark-blue;
 		color: $white;
+	}
+
+	&__header {
+		font-size: 1.4rem;
+		font-weight: 200;
 	}
 }

@@ -1,0 +1,82 @@
+.details {
+	display: flex;
+	margin-top: 10rem;
+	margin-bottom: 5rem;
+	justify-content: space-between;
+	min-height: 40rem;
+	width: 100%;
+	@include respond(tab-land) {
+		flex-direction: column;
+	}
+
+	&__item {
+		font-weight: 600;
+		font-size: 1.6rem;
+		text-align: left;
+	}
+
+	&__span {
+		display: inline-block;
+		font-weight: 200;
+		margin-left: 0.5rem;
+		font-size: 1.4rem;
+	}
+
+	&__info {
+		display: flex;
+		justify-content: space-between;
+		max-width: 100%;
+		margin-top: 1rem;
+		@include respond(phone) {
+			flex-direction: column;
+		}
+
+		&--left {
+			margin-right: 10rem;
+		}
+
+		&--right {
+			@include respond(phone) {
+				margin-top: 5rem;
+			}
+			@include respond(tab-land) {
+				margin-right: 10rem;
+			}
+		}
+	}
+
+	&__cover {
+		max-width: 55rem;
+		height: 35rem;
+		@include respond(tab-land) {
+			max-width: 70rem;
+			height: auto;
+		}
+		@include respond(tab-port) {
+			max-width: 65rem;
+			height: auto;
+		}
+	}
+
+	&__box {
+		line-height: 2;
+		@include respond(tab-land) {
+			line-height: 2.5;
+		}
+	}
+
+	&__heading {
+		font-size: 2.2rem;
+	}
+
+	&__footer {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		margin-top: 5rem;
+		@include respond(phone) {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+	}
+}
