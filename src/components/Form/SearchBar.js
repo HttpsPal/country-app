@@ -40,7 +40,6 @@ const SearchBar = () => {
 				className={
 					darkMode ? "input nightmode input__search" : "input input__search"
 				}
-				type="search"
 				id="search"
 				name="search"
 				value={searching}
