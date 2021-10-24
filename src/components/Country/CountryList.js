@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
 import {
 	useGetCountryQuery,
 	useGetRegionQuery,
@@ -35,27 +34,17 @@ const CountryList = () => {
 		}
 	}, [searched, countriesResult]);
 
-	const setLocalStorage = (ctry) => {
-		localStorage.setItem("picked-country", JSON.stringify(ctry));
-	};
-
 	return (
 		<>
 			{countryList.data?.map((country) => (
-				<Link
-					onClick={() => setLocalStorage(country)}
+				<CountryCard
 					key={country.name.official}
-					to={`/details/${country.name.official}`}
-				>
-					<CountryCard
-						key={country.name.official}
-						name={country.name.official}
-						capital={country.capital}
-						region={country.region}
-						population={country.population}
-						flag={country.flags.svg}
-					/>
-				</Link>
+					name={country.name.official}
+					capital={country.capital}
+					region={country.region}
+					population={country.population}
+					flag={country.flags.svg}
+				/>
 			))}
 		</>
 	);
