@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
 
-const RightInfoDetails = () => {
-	const { country } = useSelector((state) => state.country);
+const RightInfoDetails = ({ country }) => {
 	const [languages, setLanguages] = useState([]);
 	const [currencies, setCurrencies] = useState([]);
 

@@ -48,11 +48,13 @@
 	&__cover {
 		max-width: 55rem;
 		height: 35rem;
+		margin-right: 5rem;
 		@include respond(tab-land) {
 			max-width: 70rem;
 			height: auto;
 		}
 		@include respond(tab-port) {
+			margin-right: 0;
 			max-width: 65rem;
 			height: auto;
 		}

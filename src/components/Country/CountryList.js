@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import {
 	useGetCountryQuery,
 	useGetRegionQuery,
 	useGetAllQuery,
 } from "../../services/CountryAPI";
-import { select } from "../../features/Country";
 import CountryCard from "./CountryCard";
 
 const CountryList = () => {
@@ -18,7 +17,7 @@ const CountryList = () => {
 
 	const [countryList, setCountryList] = useState(allResult);
 
-	const dispatch = useDispatch();
+	// const dispatch = useDispatch();
 
 	useEffect(() => {
 		setCountryList(allResult);
@@ -36,11 +35,15 @@ const CountryList = () => {
 		}
 	}, [searched, countriesResult]);
 
+	const setLocalStorage = (ctry) => {
+		localStorage.setItem("picked-country", JSON.stringify(ctry));
+	};
+
 	return (
 		<>
 			{countryList.data?.map((country) => (
 				<Link
-					onClick={() => dispatch(select(country))}
+					onClick={() => setLocalStorage(country)}
 					key={country.name.official}
 					to={`/details/${country.name.official}`}
 				>

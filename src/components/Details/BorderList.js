@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
 import Borders from "./Borders";
 
-const BorderList = () => {
-	const { country } = useSelector((state) => state.country);
+const BorderList = ({ country }) => {
 	const [borders, setBorders] = useState([]);
 
 	useEffect(() => {
@@ -13,7 +11,7 @@ const BorderList = () => {
 	return (
 		<>
 			{borders ? (
-				borders.map((border) => <Borders border={border} />)
+				borders.map((border) => <Borders key={border} border={border} />)
 			) : (
 				<span className="details__span">N/A</span>
 			)}

@@ -1,11 +1,12 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useState } from "react";
 import FlagBox from "./FlagBox";
 import RightInfoDetails from "./RightInfoDetails";
 import BorderList from "./BorderList";
 
 const DetailsCard = () => {
-	const { country } = useSelector((state) => state.country);
+	const [country] = useState(
+		JSON.parse(localStorage.getItem("picked-country"))
+	);
 
 	return (
 		<div className="details">
@@ -40,13 +41,13 @@ const DetailsCard = () => {
 						</p>
 					</div>
 					<div className="details__info--right">
-						<RightInfoDetails />
+						<RightInfoDetails country={country} />
 					</div>
 				</div>
 				<div className="details__footer">
 					<p className="details__item">Border Countries: </p>
 					<div className="border-container">
-						<BorderList />
+						<BorderList country={country} />
 					</div>
 				</div>
 			</div>
